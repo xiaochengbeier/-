@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+      "lib": ["ES2016"],
+      "module": "CommonJS",
+      "target": "ES2016",
+      "outDir": "./dist",
+      "declaration": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true
+    },
+    "include": ["./src"]
+}
