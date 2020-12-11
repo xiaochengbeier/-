@@ -1,13 +1,14 @@
-import { plainToClass } from "class-transformer";
+import { plainToClass, Type } from "class-transformer";
 import { ClassType } from "class-transformer/ClassTransformer";
 import { IsNotEmpty, Min, validate } from "class-validator";
 import { ValidateError } from "./Types";
 
 export class Search {
-    @IsNotEmpty({message:"查询关键字不能为空"})
     public key:string="";
     @Min(1,{message:"页码至少为一"})
+    @Type(()=>Number)
     public page:number=1;
+    @Type(()=>Number)
     @Min(10,{message:"每页至少为十条"})
     public size:number = 10;
     @IsNotEmpty({message:"总页码不能为空"})
